@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: helloworld
+    version: v1
+  name: helloworld
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld
+      version: v1
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: helloworld
+        version: v1
+    spec:
+      containers:
+      - image: gcr.io/awesome-lotus-335801/helloworld-canary:latest
+        name: helloworld-canary
+        env:
+        - name: VERSION
+          value: "1"
+        resources: {}
+status: {}
