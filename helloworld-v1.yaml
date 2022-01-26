@@ -4,7 +4,7 @@ metadata:
   labels:
     app: helloworld
     version: v1
-  name: helloworld
+  name: helloworld-v1
 spec:
   replicas: 1
   selector:
